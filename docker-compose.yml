@@ -1,0 +1,10 @@
+normal-crawler:
+  build: .
+  command: python -u controller.py
+  volumes:
+    - .:/todo
+    - /data/Congestion/stream:/data/Congestion/stream
+  links:
+    - db
+db:
+  image: mongo:3.0.2
